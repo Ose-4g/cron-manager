@@ -1,3 +1,3 @@
-# cron-job
+# cron-manager
 
-npm cron-job package
+npm @ose4g/cron-manager package
