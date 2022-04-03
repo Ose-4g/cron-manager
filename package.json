@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ose-4g/cron-job.git"
+    "url": "git+https://github.com/Ose-4g/cron-manager.git"
   },
   "author": {
     "name": "Osemudiamen Itua",
@@ -23,9 +23,9 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ose-4g/cron-job/issues"
+    "url": "https://github.com/Ose-4g/cron-manager.git/issues"
   },
-  "homepage": "https://github.com/Ose-4g/cron-job#readme",
+  "homepage": "https://github.com/Ose-4g/cron-manager.git#readme",
   "dependencies": {
     "node-cron": "^3.0.0",
     "reflect-metadata": "^0.1.13"
