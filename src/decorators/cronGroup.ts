@@ -6,6 +6,11 @@ export interface Group {
   constructor: Function;
   className: string;
 }
+/**
+ * Decorator for the Cron Job class
+ * @param groupTag 'tag of the group. It is used to uniquely identify this class so that all jobs in the class can be started or stoppoed using this key
+ * @returns A class Decorator
+ */
 export function cronGroup(groupTag?: string): ClassDecorator {
   return function (constructor: Function) {
     const groups: Group[] = Reflect.getMetadata(GROUP_SYMBOL, Reflect) || [];

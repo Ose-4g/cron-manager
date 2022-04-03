@@ -10,6 +10,13 @@ export interface Handler {
   className: string;
 }
 
+/**
+ * 
+ * Decorator for the cron job method
+ * @param cronExpression : Expression defining how often the function should run
+ * @param handlerTag : tag to uniquely identify the handler so the handler can be started or stopped using the tag
+ * @returns : MethodDecorator
+ */
 export function cronJob(cronExpression: string, handlerTag?: string): MethodDecorator {
   return function (target: Object, propertyKey: string | Symbol, descriptor: PropertyDescriptor) {
     const isValid = cron.validate(cronExpression);

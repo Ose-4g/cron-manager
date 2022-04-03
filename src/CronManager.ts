@@ -18,6 +18,11 @@ export class CronManager {
     });
   }
 
+  /**
+   * Registers an instance to a class
+   * @param Class : The Class 
+   * @param instance : Instance of the class given
+   */
   register(Class: Function, instance: any): void {
     if (!this.instanceMap.has(Class.name))
       throw new Error(`class ${Class.name} has not been decorated with @cronGroup`);
@@ -25,6 +30,11 @@ export class CronManager {
     this.instanceMap.set(Class.name, instance);
   }
 
+
+  /**
+   * gets all the handlers and adds them to the various Maps and lists in the appropriate manner
+   * @returns void
+   */
   private init() {
     if (this.initialized) return;
 
@@ -65,6 +75,9 @@ export class CronManager {
     this.initialized = true;
   }
 
+  /**
+   * starts all cron jobs
+   */
   startAll() {
     this.init();
     this.allJobs.forEach((job) => {
@@ -72,6 +85,9 @@ export class CronManager {
     });
   }
 
+  /**
+   * stops all cron jobs
+   */
   stopAll() {
     this.init();
     this.allJobs.forEach((job) => {
@@ -79,6 +95,11 @@ export class CronManager {
     });
   }
 
+  /**
+   * starts or stops all jobs defined in a group with groupTag = groupTag
+   * @param groupTag : unique tag of the group
+   * @param start : set to true to start the job. Set to false to stop the job. it defaults to true if not set.
+   */
   private startGroupLogic(groupTag: string, start = true) {
     this.init();
     if (!this.groupTagCronJobMap.has(groupTag)) throw new Error(`group tag ${groupTag} not found`);
@@ -90,6 +111,11 @@ export class CronManager {
     });
   }
 
+  /**
+   * 
+   * @param handlerTag unique tag of the handler
+   * @param start set to true to start the job. Set to false to stop the job. it defaults to true if not set.
+   */
   private startHandlerLogic(handlerTag: string, start = true) {
     this.init();
     if (!this.handlerTagCronJobMap.has(handlerTag)) throw new Error(`handler tag ${handlerTag} not found`);
@@ -99,16 +125,34 @@ export class CronManager {
     else job?.stop();
   }
 
+  /**
+   * Starts all jobs with groupTag
+   * @param groupTag 
+   */
   startGroup(groupTag: string) {
     this.startGroupLogic(groupTag);
   }
+
+  /**
+   * Stops all jobs with group groupTag
+   * @param groupTag 
+   */
   stopGroup(groupTag: string) {
     this.startGroupLogic(groupTag, false);
   }
 
+  /**
+   * Starts the job with handlerTag
+   * @param handlerTag 
+   */
   startHandler(handlerTag: string) {
     this.startHandlerLogic(handlerTag);
   }
+
+  /**
+   * stops the job with handlerTag
+   * @param handlerTag 
+   */
   stopHandler(handlerTag: string) {
     this.startHandlerLogic(handlerTag, false);
   }
