@@ -11,7 +11,7 @@ export interface Handler {
 }
 
 /**
- * 
+ *
  * Decorator for the cron job method
  * @param cronExpression : Expression defining how often the function should run
  * @param handlerTag : tag to uniquely identify the handler so the handler can be started or stopped using the tag

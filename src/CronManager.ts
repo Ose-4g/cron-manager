@@ -20,7 +20,7 @@ export class CronManager {
 
   /**
    * Registers an instance to a class
-   * @param Class : The Class 
+   * @param Class : The Class
    * @param instance : Instance of the class given
    */
   register(Class: Function, instance: any): void {
@@ -29,7 +29,6 @@ export class CronManager {
     if (Class.name !== instance.constructor.name) throw new Error(`instance is not of type ${Class.name}`);
     this.instanceMap.set(Class.name, instance);
   }
-
 
   /**
    * gets all the handlers and adds them to the various Maps and lists in the appropriate manner
@@ -112,7 +111,7 @@ export class CronManager {
   }
 
   /**
-   * 
+   *
    * @param handlerTag unique tag of the handler
    * @param start set to true to start the job. Set to false to stop the job. it defaults to true if not set.
    */
@@ -127,7 +126,7 @@ export class CronManager {
 
   /**
    * Starts all jobs with groupTag
-   * @param groupTag 
+   * @param groupTag
    */
   startGroup(groupTag: string) {
     this.startGroupLogic(groupTag);
@@ -135,7 +134,7 @@ export class CronManager {
 
   /**
    * Stops all jobs with group groupTag
-   * @param groupTag 
+   * @param groupTag
    */
   stopGroup(groupTag: string) {
     this.startGroupLogic(groupTag, false);
@@ -143,7 +142,7 @@ export class CronManager {
 
   /**
    * Starts the job with handlerTag
-   * @param handlerTag 
+   * @param handlerTag
    */
   startHandler(handlerTag: string) {
     this.startHandlerLogic(handlerTag);
@@ -151,7 +150,7 @@ export class CronManager {
 
   /**
    * stops the job with handlerTag
-   * @param handlerTag 
+   * @param handlerTag
    */
   stopHandler(handlerTag: string) {
     this.startHandlerLogic(handlerTag, false);
