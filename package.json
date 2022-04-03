@@ -1,5 +1,5 @@
 {
-  "name": "@ose4g/cron-job",
+  "name": "@ose4g/cron-manager",
   "version": "1.0.0",
   "description": "Npm package for ease of working with cron jobs",
   "main": "lib/index.js",
