@@ -1,2 +1,2 @@
-export * from './decorators'
-export * from './CronManager'
+export * from './decorators';
+export * from './CronManager';
