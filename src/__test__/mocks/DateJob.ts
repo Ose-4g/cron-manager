@@ -3,8 +3,8 @@ import 'reflect-metadata';
 
 @cronGroup('date')
 class DateJob {
-    count1 = 0;
-    count2 = 0;
+  count1 = 0;
+  count2 = 0;
   constructor(private location: string) {}
 
   @cronJob('* * * * * *', 'printDate')
