@@ -45,6 +45,15 @@
   "files": [
     "lib/**/*"
   ],
+  "keywords": [
+    "cron",
+    "node-cron",
+    "cron-manager",
+    "decorators",
+    "cronjob",
+    "jobmanager",
+    "manager"
+  ],
   "engines": {
     "node": ">=14.0.0"
   }
