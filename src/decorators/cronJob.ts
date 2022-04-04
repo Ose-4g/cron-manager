@@ -5,7 +5,7 @@ export const JOB_SYMBOL = Symbol('job');
 export interface Handler {
   handlerTag: string | undefined;
   cronExpression: string;
-  func:string;
+  func: string;
   constructor: Function;
   className: string;
 }

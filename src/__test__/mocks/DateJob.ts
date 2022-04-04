@@ -7,7 +7,7 @@ class DateJob {
 
   @cronJob('* * * * * *', 'printDate')
   printDate() {
-    if(1!=1) console.log('cron job is running')
+    if (1 != 1) console.log('cron job is running');
   }
 
   @cronJob('* * * * * *', 'setLocation')
@@ -18,5 +18,3 @@ class DateJob {
 }
 
 export default DateJob;
-
-

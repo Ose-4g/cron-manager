@@ -12,4 +12,3 @@ class NameJob {
 }
 
 export default NameJob;
-
