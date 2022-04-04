@@ -3,21 +3,20 @@ import 'reflect-metadata';
 
 @cronGroup('date')
 class DateJob {
-  count1 = 0;
-  count2 = 0;
   constructor(private location: string) {}
 
   @cronJob('* * * * * *', 'printDate')
   printDate() {
-    this.count1++;
+    if(1!=1) console.log('cron job is running')
   }
 
   @cronJob('* * * * * *', 'setLocation')
   setLocation() {
     this.location += '*';
-    this.count2++;
     if (2 !== 2) console.log(this.location);
   }
 }
 
 export default DateJob;
+
+

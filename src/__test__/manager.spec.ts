@@ -14,12 +14,17 @@ manager.register(NameJob, nameJob);
 const sandbox = sinon.createSandbox();
 let clock: sinon.SinonFakeTimers;
 
+let printDateSpy:sinon.SinonSpy
+let setLocationSpy:sinon.SinonSpy
+let printNameSpy:sinon.SinonSpy
+
 describe('Test For CronManager ', () => {
   beforeEach(() => {
     clock = sinon.useFakeTimers();
-    dateJob.count1 = 0;
-    dateJob.count2 = 0;
-    nameJob.count = 0;
+
+    printDateSpy = sandbox.spy(dateJob,'printDate')
+    setLocationSpy = sandbox.spy(dateJob, 'setLocation')
+    printNameSpy = sandbox.spy(nameJob,'printName')
   });
   afterEach(() => {
     if (clock) clock.restore();
@@ -31,9 +36,9 @@ describe('Test For CronManager ', () => {
     await clock.tick(10000);
     manager.stopAll();
     await clock.tick(2000);
-    assert.equal(dateJob.count1, 10);
-    assert.equal(dateJob.count2, 10);
-    assert.equal(nameJob.count, 5);
+    assert.equal(10,printDateSpy.callCount)
+    assert.equal(10,setLocationSpy.callCount)
+    assert.equal(5,printNameSpy.callCount)
   });
 
   it('startGroup() should throw error when called with invalid group', (done) => {
@@ -51,9 +56,9 @@ describe('Test For CronManager ', () => {
     await clock.tick(10000);
     manager.stopAll();
     await clock.tick(2000);
-    assert.equal(dateJob.count1, 10);
-    assert.equal(dateJob.count2, 10);
-    assert.equal(nameJob.count, 0);
+        assert.equal(10,printDateSpy.callCount)
+    assert.equal(10,setLocationSpy.callCount)
+    assert.equal(0,printNameSpy.callCount)
   });
 
   it('stopGroup() should stop all handlers only for a specific group', async () => {
@@ -62,9 +67,9 @@ describe('Test For CronManager ', () => {
     manager.stopGroup('date');
     await clock.tick(2000);
     manager.stopAll();
-    assert.equal(dateJob.count1, 10);
-    assert.equal(dateJob.count2, 10);
-    assert.equal(nameJob.count, 6);
+    assert.equal(10,printDateSpy.callCount)
+    assert.equal(10,setLocationSpy.callCount)
+    assert.equal(6,printNameSpy.callCount)
   });
 
   it('startHandler() should throw error when called with invalid handlerTag', (done) => {
@@ -82,19 +87,19 @@ describe('Test For CronManager ', () => {
     await clock.tick(10000);
     manager.stopAll();
     await clock.tick(2000);
-    assert.equal(dateJob.count1, 10);
-    assert.equal(dateJob.count2, 0);
-    assert.equal(nameJob.count, 0);
+    assert.equal(10,printDateSpy.callCount)
+    assert.equal(0,setLocationSpy.callCount)
+    assert.equal(0,printNameSpy.callCount)
   });
 
-  it('stopHandler() should stop only the speicif handler', async () => {
+  it('stopHandler() should stop only the specific handler', async () => {
     manager.startAll();
     await clock.tick(10000);
     manager.stopHandler('printDate');
     await clock.tick(2000);
     manager.stopAll();
-    assert.equal(dateJob.count1, 10);
-    assert.equal(dateJob.count2, 12);
-    assert.equal(nameJob.count, 6);
+    assert.equal(10,printDateSpy.callCount)
+    assert.equal(12,setLocationSpy.callCount)
+    assert.equal(6,printNameSpy.callCount)
   });
 });
