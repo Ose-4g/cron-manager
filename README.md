@@ -12,14 +12,14 @@ npm i @ose4g/cron-manager
 
 The package works with decorators and hance the following lines should be in your tsconfig.json file
 
-```
+```javascript
 "experimentalDecorators": true,
 "emitDecoratorMetadata": true,
 ```
 
 Annotate your Job class with **@cronGroup** and annotate each handler with **@cronJob**
 
-```
+```javascript
 import { cronGroup, cronJob, CronManager } from "@ose4g/cron-manager";
 
 
