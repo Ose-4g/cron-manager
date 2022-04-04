@@ -52,7 +52,9 @@ export class CronManager {
           throw new Error(`class ${className} was not decorateed with cronGroup tag`);
         const instance = this.instanceMap.get(className);
         if (!instance) throw new Error(`class ${className} has not been registered`);
-        const job = schedule(cronExpression, func.bind(instance), { scheduled: false });
+        const job = schedule(cronExpression, ()=>{
+          instance[func]();
+        }, { scheduled: false });
 
         this.allJobs.push(job); //add the job to the global list of jobs.
 

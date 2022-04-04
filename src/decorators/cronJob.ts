@@ -5,7 +5,7 @@ export const JOB_SYMBOL = Symbol('job');
 export interface Handler {
   handlerTag: string | undefined;
   cronExpression: string;
-  func: any;
+  func:string;
   constructor: Function;
   className: string;
 }
@@ -22,11 +22,10 @@ export function cronJob(cronExpression: string, handlerTag?: string): MethodDeco
     const isValid = cron.validate(cronExpression);
     if (!isValid) throw new Error(`${cronExpression} is not a valid cron expression`);
     const allHandlers: Handler[] = Reflect.getMetadata(JOB_SYMBOL, target.constructor) || [];
-
     allHandlers.push({
       handlerTag,
       cronExpression,
-      func: descriptor.value,
+      func: propertyKey as string,
       constructor: target.constructor,
       className: target.constructor.name,
     });

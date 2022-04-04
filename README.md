@@ -54,11 +54,11 @@ manager.register(AuthService,authJob)
 manager.startAll() //starts all jobs
 manager.stopAll() //stops all jobs
 
-//starting ans stopping for specific groups
+//starting and stopping for specific groups
 manager.startGroup('jobs') //starts only jobs in the class with tag equal to jobs
 manager.stopGroup('jobs') //stops only jobs in the class with grouptag equal to jobs
 
-//starting ans stopping for specific handlers or jobs
+//starting and stopping for specific handlers or jobs
 manager.startHandler('my_unban_func') //starts the single job with tag equal to my_unban_func
 manager.stopHandler('my_unban_func') //stop the single job with tag equal to my_unban_func
 
