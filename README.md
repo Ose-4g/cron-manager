@@ -6,7 +6,7 @@
  ![npms.io (final)](https://img.shields.io/npms-io/quality-score/@ose4g/cron-manager)
  ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@ose4g/cron-manager)
 
- [![NPM](https://nodeico.herokuapp.com/@ose4g/cron-manager.svg)](https://npmjs.com/package/@ose4g/cron-manager)    
+ 
 
 
 This package is a package to manage cron-jobs in a node.js **Typescript** application. It is built using [node-cron](https://www.npmjs.com/package/node-cron) and [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) packages
