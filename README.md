@@ -1,5 +1,6 @@
 # @ose4g/cron-manager
 
+[![https://nodei.co/npm/@ose4g/cron-manager.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@ose4g/cron-manager.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@ose4g/cron-manager)   
 This package is a package to manage cron-jobs in a node.js **Typescript** application. It is built using [node-cron](https://www.npmjs.com/package/node-cron) and [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) packages
 
 ## Installation
