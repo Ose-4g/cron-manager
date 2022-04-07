@@ -68,6 +68,8 @@ manager.stopGroup('jobs') //stops only jobs in the class with grouptag equal to 
 manager.startHandler('my_unban_func') //starts the single job with tag equal to my_unban_func
 manager.stopHandler('my_unban_func') //stop the single job with tag equal to my_unban_func
 
+manager.getGroups() // returns ['auth','jobs']
+manager.getHandlers() //returns ['my_unban_func','print_name_func']
 ```
 
 ## Methods
