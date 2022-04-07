@@ -2,12 +2,9 @@
 
 ![npm (scoped)](https://img.shields.io/npm/v/@ose4g/cron-manager)
 ![npm](https://img.shields.io/npm/dw/@ose4g/cron-manager)
- ![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/@ose4g/cron-manager)
- ![npms.io (final)](https://img.shields.io/npms-io/quality-score/@ose4g/cron-manager)
- ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@ose4g/cron-manager)
-
- 
-
+![npms.io (final)](https://img.shields.io/npms-io/maintenance-score/@ose4g/cron-manager)
+![npms.io (final)](https://img.shields.io/npms-io/quality-score/@ose4g/cron-manager)
+![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@ose4g/cron-manager)
 
 This package is a package to manage cron-jobs in a node.js **Typescript** application. It is built using [node-cron](https://www.npmjs.com/package/node-cron) and [reflect-metadata](https://www.npmjs.com/package/reflect-metadata) packages
 

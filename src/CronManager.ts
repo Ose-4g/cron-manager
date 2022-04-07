@@ -161,4 +161,13 @@ export class CronManager {
   stopHandler(handlerTag: string) {
     this.startHandlerLogic(handlerTag, false);
   }
+
+  getGroups(){
+    const groups = Array.from(this.groupTagCronJobMap.keys())
+    return groups
+  }
+
+  getHandlers(){
+    return Array.from(this.handlerTagCronJobMap.keys())
+  }
 }
