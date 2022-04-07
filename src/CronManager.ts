@@ -162,12 +162,12 @@ export class CronManager {
     this.startHandlerLogic(handlerTag, false);
   }
 
-  getGroups(){
-    const groups = Array.from(this.groupTagCronJobMap.keys())
-    return groups
+  getGroups() {
+    const groups = Array.from(this.groupTagCronJobMap.keys());
+    return groups;
   }
 
-  getHandlers(){
-    return Array.from(this.handlerTagCronJobMap.keys())
+  getHandlers() {
+    return Array.from(this.handlerTagCronJobMap.keys());
   }
 }

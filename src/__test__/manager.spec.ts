@@ -103,12 +103,12 @@ describe('Test For CronManager ', () => {
     assert.equal(6, printNameSpy.callCount);
   });
 
-  it('it should get the number of handlers and groups',()=>{
+  it('it should get the number of handlers and groups', () => {
     const groups = manager.getGroups();
     const handlers = manager.getHandlers();
-    assert.equal(groups.length,2)
-    assert.includeMembers(groups,['date','name'])
-    assert.equal(handlers.length,3)
-    assert.includeMembers(handlers,['printDate', 'printName', 'setLocation'])
-  })
+    assert.equal(groups.length, 2);
+    assert.includeMembers(groups, ['date', 'name']);
+    assert.equal(handlers.length, 3);
+    assert.includeMembers(handlers, ['printDate', 'printName', 'setLocation']);
+  });
 });
