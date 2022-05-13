@@ -6,7 +6,7 @@
   "scripts": {
     "test": "rimraf lib && yarn build && mocha lib/__test__ --recursive --timeout 25000 --exit",
     "build": "tsc",
-    "prepare": "yarn build",
+    "prepare": "yarn build && rimraf lib/__test__",
     "prepublish": "yarn format",
     "format": "prettier --write .",
     "preversion": "yarn format",
